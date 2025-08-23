@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body
-    class="bg-[#f4f5f7] h-[100vh] w-[360px] mx-auto flex justify-center items-center flex-col"
+    class="bg-[#f4f5f7] w-[360px] mx-auto flex justify-center items-center flex-col"
   >
     <nav class="border-b border-[#f5f5f5] w-full">
       <div
@@ -23,7 +23,7 @@
           <img src="./assets/Group.png" class="h-[50px]" />
         </div>
         <div>
-          <h1 class="font-bold mb-1">$45000</h1>
+          <h1 class="font-bold mb-1">$<span id="balance">45000</span></h1>
           <p>Total Balance</p>
         </div>
        </div>
@@ -34,44 +34,44 @@
     </nav>
 
     <main>
-        <div class="bg-white rounded-b-2xl px-8 w-[360px]">
+        <div class="bg-white rounded-b-2xl px-8 w-[360px] cursor-pointer">
             <div>
                 <h1 class="font-bold pt-5 pb-5">🔥 Welcome to Payooo!</h1>
             <p class="text-[#080808]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
             </div>
-            <div class="grid grid-cols-3 gap-4 mt-5 pb-5">
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+            <div class="grid grid-cols-3 gap-4 mt-5 pb-5" >
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="addMoney">
                     <img src="./assets/bonus1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Add Money</h2>
                 </div>
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="cashout">
                     <img src="./assets/send1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Cashout</h2>
                 </div>
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="transfer">
                     <img src="./assets/money1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Transfer Money</h2>
                 </div>
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="bonus">
                     <img src="./assets/bonus1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Get Bonus</h2>
                 </div>
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="pay">
                     <img src="./assets/purse1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Pay Bill</h2>
                 </div>
-                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]">
+                <div class="p-4 rounded-lg flex flex-col justify-center items-center border border-[#f4f5f7]" id="transactions">
                     <img src="./assets/send1.png" alt="">
                     <h2 class="font-semibold text-[10px] ">Transactions</h2>
                 </div>
             </div>
         </div>
-        <section>
+        <section id="toggle1">
             <h1 class="p-4 font-bold text-2xl">Add Money</h1>
             <form class="bg-white rounded-2xl p-8 w-[300px] flex flex-col mx-auto">
        <div class="mt-5">
          <label for="" class="font-semibold">Select Bank</label><br>
-           <select name="" id="" class="select input bg-[#f4f5f7] mt-3 rounded-xl">
+           <select name="" id="selectBank" class="select input bg-[#f4f5f7] mt-3 rounded-xl">
             <option value="">Select A Bank</option>
             <option value="">AB Bank</option>
             <option value="">IFIC Bank</option>
@@ -80,17 +80,96 @@
          </select>
        </div>
         <label class="font-semibold">Bank Account Number</label>
-         <input type="text" placeholder="Enter 11 Digit acoount number" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
+         <input type="text" placeholder="Enter 11 Digit acoount number" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="acoountNumber"/>
        </div>
         <label class="font-semibold">Ammount to add</label>
-         <input type="text" placeholder="Add Amount to withdraw" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
+         <input type="text" placeholder="Add Amount to withdraw" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="amount"/>
        </div>
         <label class="font-semibold">Pin Number</label>
          <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
        </div>
-       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="loginButton">Add Money</button>
+       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="AddMoneyBtn">Add Money</button>
     </form>
         </section>
+        <!-- ------------------section1 end------------------ -->
+        <section id="toggle3">
+            <h1 class="p-4 font-bold text-2xl">Transfer</h1>
+            <form class="bg-white rounded-2xl p-8 w-[300px] flex flex-col mx-auto">
+       
+        <label class="font-semibold">User Account Number</label>
+         <input type="text" placeholder="Enter 11 Digit number" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="acoountNumber"/>
+       </div>
+        <label class="font-semibold">Ammount</label>
+         <input type="text" placeholder="Add Amount to withdraw" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="amount"/>
+       </div>
+        <label class="font-semibold">Pin Number</label>
+         <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
+       </div>
+       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="AddMoneyBtn">Transfer Money</button>
+    </form>
+        </section>
+        <!-- ------------------------section2 end------------------ -->
+                <section id="toggle2">
+            <h1 class="p-4 font-bold text-2xl">Cash Out</h1>
+            <form class="bg-white rounded-2xl p-8 w-[300px] flex flex-col mx-auto">
+       
+        <label class="font-semibold">Agent Number</label>
+         <input type="text" placeholder="Enter 11 Digit number" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="acoountNumber"/>
+       </div>
+        <label class="font-semibold">Ammount</label>
+         <input type="text" placeholder="Add Amount to withdraw" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="amount"/>
+       </div>
+        <label class="font-semibold">Pin Number</label>
+         <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
+       </div>
+       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="AddMoneyBtn">Withdraw Money</button>
+    </form>
+        </section>
+     <!-- --------------------------------section3 end------------------ -->
+              <section id="toggle4">
+            <h1 class="p-4 font-bold text-2xl">Bonus</h1>
+            <form class="bg-white rounded-2xl p-8 w-[300px] flex flex-col mx-auto">
+       
+        <label class="font-semibold">Bonus</label>
+         <input type="text" placeholder="Add Coupon Code" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="acoountNumber"/>
+       </div>
+       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="AddMoneyBtn">Get Bonus</button>
+    </form>
+        </section>
+        <!-- -------------------------------------section4 end------------------ -->
+                 <section id="toggle5">
+            <h1 class="p-4 font-bold text-2xl">Pay</h1>
+            <form class="bg-white rounded-2xl p-8 w-[300px] flex flex-col mx-auto">
+                <div class="mt-5">
+         <label for="" class="font-semibold">Select to Pay</label><br>
+           <select name="" id="selectBank" class="select input bg-[#f4f5f7] mt-3 rounded-xl">
+            <option value="">Select A services</option>
+            <option value="">Electric Bill</option>
+            <option value="">Gas Bill</option>
+            <option value="">Intenet Bill</option>
+
+         </select>
+       </div>
+        <label class="font-semibold">Biller Account Number</label>
+         <input type="text" placeholder="Enter account number" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="acoountNumber"/>
+       </div>
+        <label class="font-semibold">Amount to Pay</label>
+         <input type="text" placeholder="Add Amount to pay" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="amount"/>
+       </div>
+        <label class="font-semibold">Pin Number</label>
+         <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f7] mt-3 rounded-xl" id="pin"/>
+       </div>
+       <button class="btn bg-[#0874F2] mt-5 w-full rounded-xl text-white" id="AddMoneyBtn">Pay Now</button>
+    </form>
+        </section>
+        <!-- -------------------------------------section5--------------------- -->
+         <section id="toggle6">
+            <div class="flex justify-between items-center my-4 text-xl px-8">
+              <h1 class="font-bold">Transaction History</h1>
+              <span class="text-[#c7c7c7] cursor-pointer">view all</span>
+            </div>
+         </section>
     </main>
+    <script src="./homeScript.js"></script>
   </body>
 </html>
